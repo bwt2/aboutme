@@ -18,4 +18,4 @@ npm run dev
 The application will be available at http://localhost:5173.
 
 ## Rendering
-To change the rendering strategies (SPA/SSR/SSG), [edit the `react-router.config.ts` file](https://reactrouter.com/start/framework/rendering) at the root of the project.
+To change the rendering strategies ([SPA](https://reactrouter.com/how-to/spa)/SSR/[SSG](https://reactrouter.com/how-to/pre-rendering)), [edit the `react-router.config.ts` file](https://reactrouter.com/start/framework/rendering) at the root of the project.

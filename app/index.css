@@ -49,4 +49,5 @@ table {
 }
 :root { /* define variables here */
   --background-color: #242424;
+  --default-font: Inter;
 }

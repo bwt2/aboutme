@@ -1,10 +1,16 @@
-main {
+.main {
+    background-color: var(--background-color);
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--background-color);
+}
+
+.main > h1 {   
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     color: white;
+    font-weight: bold;
+    font-size: 3rem;
 }

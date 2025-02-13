@@ -9,6 +9,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <main className={styles.main}>
-    <h1>Site Under Construction . . .</h1></main>;
+  return (
+  <main className={styles.main}>
+    <h1>Site Under Construction . . .</h1>
+  </main>
+  );
 }

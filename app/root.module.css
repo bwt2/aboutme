@@ -1,17 +1,31 @@
-main {
+.main {
     background-color: var(--background-color);
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-main > h1, 
-main > p {
+.heading {
     color: white;
     font-weight: bold;
     font-size: 3rem;
+}
+
+.paragraph {
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.stack {
+    width: 100%;
+    padding: 16px;
+    overflow-x: auto;
+    background-color: #2d2d2d; 
+    color: white;
+    border-radius: 8px;
 }
