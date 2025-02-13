@@ -2,7 +2,7 @@
   "name": "aboutme",
   "private": true,
   "type": "module",
-  "homepage": "https://bwt2.github.io/aboutme/",
+  "homepage": "https://bwt2.github.io/",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
