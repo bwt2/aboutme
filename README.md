@@ -1,10 +1,13 @@
 # Aboutme
-Personal site hosted on Vercel, rendered using [static site generation (SSG) via Vite and React Router v7](https://github.com/remix-run/react-router-templates/tree/main/vercel).
+Personal site hosted on Vercel, rendered using [static site generation (SSG) via Vite and React Router v7](https://github.com/remix-run/react-router-templates/tree/main/vercel). Access the site below!
 
 <div align = center>
-Access the site here!
-<br>
-> > <a target="_blank" href="https://btja.vercel.app">btja.vercel.app</a> < <
+<a target="_blank" 
+   href="https://btja.vercel.app" 
+   style="font-weight: bold; font-size: 1.5rem; padding: 0.5rem; border: 1px solid white"
+>
+   btja.vercel.app
+</a>
 </div>
 
 
