@@ -4,6 +4,7 @@
     color: white;
     width: 100%;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    z-index: 1;
 }
 
 .nav > ul {

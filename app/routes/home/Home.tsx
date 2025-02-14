@@ -15,11 +15,11 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
+      <Navbar/>
       <div className={styles.layout}>
         <Main/>
-        <Navbar/>
-        <Footer/>
       </div>
+      <Footer/>
     </>
   );
 }
