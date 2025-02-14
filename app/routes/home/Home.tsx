@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import Main from "../main/Main";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,11 +15,11 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.layout}>
         <Navbar/>
-        <h1>Site Under Construction . . .</h1>
+        <Main/>
         <Footer/>
-      </main>
+      </div>
     </>
   );
 }

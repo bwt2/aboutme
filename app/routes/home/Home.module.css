@@ -1,4 +1,4 @@
-.main {
+.layout {
     background-color: var(--background-color);
     width: 100vw;
     height: 100vh;
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.main > h1 {   
+.layout > h1 {   
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     color: white;
     font-weight: bold;
