@@ -9,7 +9,7 @@ export default function Main({ active, setActive } : { active: navItem, setActiv
       <div className={`${styles.star} ${styles.denebola}`}></div>
       <div className={`${styles.star} ${styles.theta}`}></div>
       <div className={`${styles.star} ${styles.delta}`}></div>
-      <div className={`${styles.star} ${styles.regulus}`}></div>
+      <div className={`${styles.star} ${styles.regulus} ${active === "About Me" ? styles.starActive : ""}`}></div>
       <div className={`${styles.star} ${styles.eta}`}></div>
       <div className={`${styles.star} ${styles.gamma}`}></div>
       <div className={`${styles.star} ${styles.zeta}`}></div>

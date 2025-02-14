@@ -10,6 +10,11 @@
     border: 5px solid white;
     border-radius: 50%;
     transform: translateY(-5vh);
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+}
+
+.starActive {
+    border-color: red;
 }
 
 .denebola {
@@ -30,6 +35,14 @@
 .regulus {
     top: 75%;
     left: 76.5%;
+}
+
+.regulus::after {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    content: '01 About Me';
+    white-space: nowrap;
 }
 
 .eta {
