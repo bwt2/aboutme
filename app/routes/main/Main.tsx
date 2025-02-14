@@ -1,20 +1,56 @@
+import type { navItem, star } from "~/types/types";
 import styles from "./Main.module.css";
+import { starNavMap, navIndex } from "~/utils/map";
 
-type navItem = "Home" | "About Me" | "Education" | "Experience" | "Projects" | "Skills";
-type setActiveHook = React.Dispatch<React.SetStateAction<navItem>>;
+type setHoveredHook = React.Dispatch<React.SetStateAction<star | null>>;
 
-export default function Main({ active, setActive } : { active: navItem, setActive: setActiveHook}) {
+export default function Main ( { hovered, setHovered } : { hovered : star | null, setHovered: setHoveredHook }) {
+  const stars: star[] = [
+    "denebola",
+    "theta",
+    "delta",
+    "regulus",
+    "eta",
+    "gamma",
+    "zeta",
+    "mu",
+    "epsilon" 
+  ];
+
   return (
     <main className={styles.main}>
-      <div className={`${styles.star} ${styles.denebola}`}></div>
-      <div className={`${styles.star} ${styles.theta}`}></div>
-      <div className={`${styles.star} ${styles.delta}`}></div>
-      <div className={`${styles.star} ${styles.regulus} ${active === "About Me" ? styles.starActive : ""}`}></div>
-      <div className={`${styles.star} ${styles.eta}`}></div>
-      <div className={`${styles.star} ${styles.gamma}`}></div>
-      <div className={`${styles.star} ${styles.zeta}`}></div>
-      <div className={`${styles.star} ${styles.mu}`}></div>
-      <div className={`${styles.star} ${styles.epsilon}`}></div>
+      {stars.map((star) => {
+        return (
+          <Star 
+            key={star}
+            hovered={hovered} 
+            setHovered={setHovered} 
+            star={star}
+            style={styles[star as keyof typeof styles]}
+          />
+        )
+      })}
     </main>
   );
+}
+
+function Star (
+  { hovered, setHovered, star, style } : { hovered: star | null, setHovered: setHoveredHook, star: star, style: CSSModuleClasses[string] }
+) {
+  const navItem: navItem | null = starNavMap(star);
+  return (
+    <div 
+      className={`${styles.star} ${style}`}
+      onMouseEnter={() => setHovered(star)}
+      onMouseLeave={() => setHovered(null)}
+    >
+      {navItem &&
+        <div className={styles.starAnnotation}>
+          <h1>{navIndex(navItem)}</h1>
+          <p>{navItem}</p>
+        </div>
+      }
+      { hovered === star ? <div className={styles.starDecor}/> : ''}
+    </div>
+  )
 }

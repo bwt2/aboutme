@@ -1,0 +1,2 @@
+export type navItem = "Home" | "About Me" | "Education" | "Experience" | "Projects" | "Skills";
+export type star = "denebola" | "theta" | "delta" | "regulus" | "eta" | "gamma" | "zeta" | "mu" | "epsilon";

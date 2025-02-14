@@ -1,4 +1,5 @@
 import type { Route } from ".react-router/types/app/routes/home/+types/Home";
+import type { navItem, star } from "~/types/types";
 import { useState } from "react";
 
 import styles from "./Home.module.css";
@@ -15,14 +16,21 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  type navItem = "Home" | "About Me" | "Education" | "Experience" | "Projects" | "Skills";
   const [active, setActive] = useState<navItem>("Home");
+  const [hovered, setHovered] = useState<star | null>(null);
 
   return (
     <>
-      <Navbar active={active} setActive={setActive}/>
+      <Navbar 
+        active={active} 
+        setActive={setActive}
+        setHovered={setHovered}
+      />
       <div className={styles.layout}>
-        <Main active={active} setActive={setActive}/>
+        <Main 
+          hovered={hovered}
+          setHovered={setHovered}
+        />
       </div>
       <Footer/>
     </>
