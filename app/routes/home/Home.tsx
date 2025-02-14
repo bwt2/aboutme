@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <div className={styles.layout}>
-        <Navbar/>
         <Main/>
+        <Navbar/>
         <Footer/>
       </div>
     </>
