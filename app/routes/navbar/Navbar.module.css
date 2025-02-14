@@ -12,12 +12,12 @@
     justify-content: space-evenly;
 }
 
-.nav > ul > li:hover {
-    text-decoration: underline;
-}
-
 .nav > ul > .border {
     border-right: 0.1rem solid white;
     min-height: 2rem;
     transform: translateY(-25%);
+}
+
+.active {
+    text-decoration: underline;
 }

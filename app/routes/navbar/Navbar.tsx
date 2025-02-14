@@ -1,20 +1,26 @@
 import styles from "./Navbar.module.css";
 
-export default function Navbar() {
+type navItem = "Home" | "About Me" | "Education" | "Experience" | "Projects" | "Skills";
+type setActiveHook = React.Dispatch<React.SetStateAction<navItem>>;
+
+export default function Navbar({ active, setActive } : { active: navItem, setActive: setActiveHook}){
+  const navItems: navItem[] = ["Home", "About Me", "Education", "Experience", "Projects", "Skills"];
+
   return (
     <nav className={styles.nav}>
         <ul>
-            <li>Home</li>
-            <li className={styles.border}></li>
-            <li>About Me</li>
-            <li className={styles.border}></li>
-            <li>Education</li>
-            <li className={styles.border}></li>
-            <li>Experience</li>
-            <li className={styles.border}></li>
-            <li>Projects</li>
-            <li className={styles.border}></li>
-            <li>Skills</li>
+          {navItems.map((navItem, index) => {
+            return <>
+              <li 
+                key={navItem}
+                className={active === navItem ? styles.active : ""}
+                onClick={() => setActive(navItem)}
+              >
+                {navItem}
+              </li>
+              { index !== 5 && <li key={index} className={styles.border}></li>}
+            </>
+          })}
         </ul>
     </nav>
   );
