@@ -1,9 +1,7 @@
 import type { Route } from ".react-router/types/app/routes/home/+types/Home";
 import type { navItem, star } from "~/types/types";
 import { useState } from "react";
-
 import styles from "./Home.module.css";
-
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import Main from "../main/Main";
@@ -16,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const [active, setActive] = useState<navItem>("Home");
+  const [active, setActive] = useState<navItem>("About Me");
   const [hovered, setHovered] = useState<star | null>(null);
 
   return (

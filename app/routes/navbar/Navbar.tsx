@@ -1,30 +1,36 @@
-import type { navItem, star } from "~/types/types";
+import type { navItem, star, setActiveHook, setHoveredHook, starData, navbarStarData } from "~/types/types";
 import styles from "./Navbar.module.css";
 import { navStarMap } from "~/utils/map";
+import navStarData from "~/data/navStar.json";
 
-type setActiveHook = React.Dispatch<React.SetStateAction<navItem>>;
-type setHoveredHook = React.Dispatch<React.SetStateAction<star | null>>;
+interface NavBarProps {
+  active: navItem, 
+  setActive: setActiveHook, 
+  setHovered: setHoveredHook
+}
 
-export default function Navbar(
-  { active, setActive, setHovered } : { active: navItem, setActive: setActiveHook, setHovered: setHoveredHook }
-){
-  const navItems: navItem[] = ["Home", "About Me", "Education", "Experience", "Projects", "Skills"];
+export default function Navbar({ active, setActive, setHovered } : NavBarProps){
+  const navbarStarData: navbarStarData[] = 
+    navStarData
+    .filter(data => data.navItem !== null && data.navIndex !== null)
+    .sort((a,b) => a.navIndex - b.navIndex) as navbarStarData[];
+  
 
   return (
     <nav className={styles.nav}>
         <ul>
-          {navItems.map((navItem, index) => {
+          {navbarStarData.map((data, index) => {
             return <>
               <li 
-                key={navItem}
-                className={active === navItem ? styles.active : ""}
-                onClick={() => setActive(navItem)}
-                onMouseEnter={() => setHovered(navStarMap(navItem))}
+                key={data.navIndex}
+                className={active === data.navItem ? styles.active : ""}
+                onClick={() => setActive(data.navItem)}
+                onMouseEnter={() => setHovered(data.star)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {navItem}
+                {data.navItem}
               </li>
-              { index !== 5 && <li key={index} className={styles.border}/>}
+              { index !== (navbarStarData.length-1) && <li key={`b-${index}`} className={styles.border}/>}
             </>
           })}
         </ul>

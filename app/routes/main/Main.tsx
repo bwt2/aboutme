@@ -1,32 +1,26 @@
-import type { navItem, star } from "~/types/types";
+import type { navItem, star, starData, setHoveredHook } from "~/types/types";
 import styles from "./Main.module.css";
 import { starNavMap, navIndex } from "~/utils/map";
+import navStarData from "~/data/navStar.json";
 
-type setHoveredHook = React.Dispatch<React.SetStateAction<star | null>>;
+interface MainProps {
+  hovered : star | null, 
+  setHovered: setHoveredHook 
+}
 
-export default function Main ( { hovered, setHovered } : { hovered : star | null, setHovered: setHoveredHook }) {
-  const stars: star[] = [
-    "denebola",
-    "theta",
-    "delta",
-    "regulus",
-    "eta",
-    "gamma",
-    "zeta",
-    "mu",
-    "epsilon" 
-  ];
+export default function Main ({ hovered, setHovered } : MainProps) {
+  const typedStarData: starData[] = navStarData as starData[];
 
   return (
     <main className={styles.main}>
-      {stars.map((star) => {
+      {typedStarData.map((data) => {
         return (
           <Star 
-            key={star}
+            key={data.star}
             hovered={hovered} 
             setHovered={setHovered} 
-            star={star}
-            style={styles[star as keyof typeof styles]}
+            data={data}
+            style={styles[data.star as keyof typeof styles]}
           />
         )
       })}
@@ -34,23 +28,27 @@ export default function Main ( { hovered, setHovered } : { hovered : star | null
   );
 }
 
-function Star (
-  { hovered, setHovered, star, style } : { hovered: star | null, setHovered: setHoveredHook, star: star, style: CSSModuleClasses[string] }
-) {
-  const navItem: navItem | null = starNavMap(star);
+interface StarProps {
+  hovered: star | null;
+  setHovered: setHoveredHook;
+  data: starData;
+  style: CSSModuleClasses[string] ;
+}
+
+function Star ({ hovered, setHovered, data, style } : StarProps) {
   return (
     <div 
       className={`${styles.star} ${style}`}
-      onMouseEnter={() => setHovered(star)}
+      onMouseEnter={() => setHovered(data.star)}
       onMouseLeave={() => setHovered(null)}
     >
-      {navItem &&
+      {data.navItem &&
         <div className={styles.starAnnotation}>
-          <h1>{navIndex(navItem)}</h1>
-          <p>{navItem}</p>
+          <h1>{data.navIndex && data.navIndex.toString().padStart(2, "0")}</h1>
+          <p>{data.navItem}</p>
         </div>
       }
-      { hovered === star ? <div className={styles.starDecor}/> : ''}
+      { hovered === data.star && <div className={styles.starDecor}/>}
     </div>
   )
 }
