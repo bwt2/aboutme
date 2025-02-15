@@ -22,7 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     if (outletRef.current) {
-      outletRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      outletRef?.current.scrollIntoView({ behavior: "smooth", block: "center"});
     }
   }, [location]);
 
