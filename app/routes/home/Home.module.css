@@ -4,6 +4,21 @@
     position: relative;
 }
 
+.bgGradient {
+    position: absolute;
+    top: -100%;
+    left: -150%;
+    width: 250vw;  /* Ensures full viewport width */
+    height: 200%; /* Ensures full viewport height */
+    background: radial-gradient(circle at center, 
+        #391E2A 20%, 
+        #272230 50%, 
+        #11202B 80%);
+    z-index: -1;
+    opacity: 75%;
+}
+
 body { 
     background-color: var(--background-color);
+    position: relative;
 }

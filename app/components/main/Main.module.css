@@ -17,10 +17,10 @@
     border-radius: 50%;
     transform: translateY(-5vh);
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
-    box-shadow:
-        0 0 60px 15px #fff,  /* inner white */
-        0 0 100px 30px #f0f, /* middle magenta */
-        0 0 140px 45px #0ff; /* outer cyan */
+    box-shadow: /* x-offset y-offset blur-radius spread-radius */
+        0 0 30px 5px #ffffff67,  /* inner white */
+        0 0 50px 20px rgba(255, 0, 255, 0.479), /* middle magenta */
+        0 0 70px 35px rgba(0, 255, 255, 0.473); /* outer cyan */
 }
 
 .star::before { /* increase star hitbox */ 

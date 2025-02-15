@@ -43,6 +43,7 @@ export default function Home() {
         <Outlet/>
       </div>
       <Footer/>
+      <div className={styles.bgGradient}/>
     </>
   );
 }
