@@ -5,8 +5,7 @@ import styles from "./Home.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
-import AboutMe from "../about-me/AboutMe";
-import Education from "../education/Education";
+import { Outlet } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -32,7 +31,7 @@ export default function Home() {
           setHovered={setHovered}
         />
       </div>
-      <AboutMe/>
+      <Outlet/>
       <Footer/>
     </>
   );

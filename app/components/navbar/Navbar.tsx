@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { navItem, star, setActiveHook, setHoveredHook, starData, navbarStarData } from "~/types/types";
 import styles from "./Navbar.module.css";
 import navStarData from "~/data/navStar.json";
@@ -22,12 +23,16 @@ export default function Navbar({ active, setActive, setHovered } : NavBarProps){
             return <>
               <li 
                 key={data.navIndex}
-                className={active === data.navItem ? styles.active : ""}
                 onClick={() => setActive(data.navItem)}
                 onMouseEnter={() => setHovered(data.star)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {data.navItem}
+                <Link 
+                  className={`${styles.link} ${active === data.navItem ? styles.active : ""}`} 
+                  to={`/${data.navItem}`}
+                >
+                  {data.navItem}
+                </Link>
               </li>
               { index !== (navbarStarData.length-1) && <li key={`b-${index}`} className={styles.border}/>}
             </>

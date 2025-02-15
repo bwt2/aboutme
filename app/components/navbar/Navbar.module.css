@@ -18,6 +18,11 @@
     transform: translateY(-25%);
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+}
+
 .active {
     text-decoration: underline;
 }
