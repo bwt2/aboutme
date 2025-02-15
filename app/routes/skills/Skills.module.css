@@ -1,0 +1,10 @@
+
+.temp {
+    display: flex;
+    justify-content: center;
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    padding-bottom: 10rem;
+}

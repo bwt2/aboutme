@@ -1,7 +1,7 @@
 export type navItem = "About Me" | "Education" | "Experience" | "Projects" | "Skills";
 export type star = "denebola" | "theta" | "delta" | "regulus" | "eta" | "gamma" | "zeta" | "mu" | "epsilon";
 export type setHoveredHook = React.Dispatch<React.SetStateAction<star | null>>;
-export type setActiveHook = React.Dispatch<React.SetStateAction<navItem>>;
+export type setActiveHook = React.Dispatch<React.SetStateAction<navItem | null>>;
 export interface starData {
     star: star,
     navIndex: number | null,

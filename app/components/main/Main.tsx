@@ -1,6 +1,5 @@
 import type { navItem, star, starData, setHoveredHook } from "~/types/types";
 import styles from "./Main.module.css";
-import { starNavMap, navIndex } from "~/utils/map";
 import navStarData from "~/data/navStar.json";
 
 interface MainProps {

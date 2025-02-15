@@ -1,10 +1,9 @@
 import type { navItem, star, setActiveHook, setHoveredHook, starData, navbarStarData } from "~/types/types";
 import styles from "./Navbar.module.css";
-import { navStarMap } from "~/utils/map";
 import navStarData from "~/data/navStar.json";
 
 interface NavBarProps {
-  active: navItem, 
+  active: navItem | null, 
   setActive: setActiveHook, 
   setHovered: setHoveredHook
 }

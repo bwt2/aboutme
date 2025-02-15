@@ -2,9 +2,11 @@ import type { Route } from ".react-router/types/app/routes/home/+types/Home";
 import type { navItem, star } from "~/types/types";
 import { useState } from "react";
 import styles from "./Home.module.css";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
-import Main from "../main/Main";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import Main from "../../components/main/Main";
+import AboutMe from "../about-me/AboutMe";
+import Education from "../education/Education";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,7 +16,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const [active, setActive] = useState<navItem>("About Me");
+  const [active, setActive] = useState<navItem | null>(null);
   const [hovered, setHovered] = useState<star | null>(null);
 
   return (
@@ -30,9 +32,7 @@ export default function Home() {
           setHovered={setHovered}
         />
       </div>
-      <div className={styles.temp}>
-        {active}
-      </div>
+      <AboutMe/>
       <Footer/>
     </>
   );
