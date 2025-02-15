@@ -5,6 +5,11 @@
     height: 100vh;
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+}
+
 .star {
     position: absolute;
     border: 5px solid white;
@@ -17,6 +22,7 @@
         0 0 100px 30px #f0f, /* middle magenta */
         0 0 140px 45px #0ff; /* outer cyan */
 }
+
 .star::before { /* increase star hitbox */ 
     content: "";
     position: absolute;
