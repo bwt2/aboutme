@@ -2,15 +2,19 @@
     width: 100vw;
     min-height: 100vh;
     position: relative;
-}
-
-.layout > h1 {   
-    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
+    margin-bottom: 10rem;
 }
 
 body { 
     background-color: var(--background-color);
+}
+
+.temp {
+    display: flex;
+    justify-content: center;
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    padding-bottom: 10rem;
 }

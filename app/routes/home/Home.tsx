@@ -30,6 +30,9 @@ export default function Home() {
           setHovered={setHovered}
         />
       </div>
+      <div className={styles.temp}>
+        {active}
+      </div>
       <Footer/>
     </>
   );

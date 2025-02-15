@@ -12,8 +12,11 @@
     border-radius: 50%;
     transform: translateY(-5vh);
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    box-shadow:
+        0 0 60px 15px #fff,  /* inner white */
+        0 0 100px 30px #f0f, /* middle magenta */
+        0 0 140px 45px #0ff; /* outer cyan */
 }
-
 .star::before { /* increase star hitbox */ 
     content: "";
     position: absolute;
