@@ -1,17 +1,19 @@
 import { useRef, type RefObject } from "react";
 import Star from "~/components/main/Star";
 import ConstellationLine from "~/components/main/ConstellationLine";
-import type { starRef, star, starData, setHoveredHook, starLine } from "~/types/types";
+import type { starRef, star, starData, setHoveredHook, starLine, navItem, setActiveHook } from "~/types/types";
 import styles from "./Main.module.css";
 import navStarData from "~/data/navStar.json";
 import starLines from "~/data/starLines.json";
 
 interface MainProps {
   hovered : star | null, 
-  setHovered: setHoveredHook 
+  setHovered: setHoveredHook,
+  active: navItem | null,
+  setActive: setActiveHook
 }
 
-export default function Main ({ hovered, setHovered } : MainProps) {
+export default function Main ({ hovered, setHovered, active, setActive } : MainProps) {
   const typedStarData: starData[] = navStarData as starData[];
   const starLineData: starLine[] = starLines as starLine[];
   const starRefs = useRef<starRef>({} as starRef);
@@ -27,6 +29,8 @@ export default function Main ({ hovered, setHovered } : MainProps) {
             data={data}
             style={styles[data.star as keyof typeof styles]}
             refList={starRefs}
+            active={active}
+            setActive={setActive}
           />
         )
       })}
@@ -40,6 +44,7 @@ export default function Main ({ hovered, setHovered } : MainProps) {
           return (
             starRefs.current[data.head] && starRefs.current[data.tail] &&
             <ConstellationLine
+              key={`${data.head}->${data.tail}`}
               headElem={starRefs.current[data.head]}
               tailElem={starRefs.current[data.tail]}
             />

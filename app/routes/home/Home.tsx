@@ -24,6 +24,11 @@ export default function Home() {
     if (outletRef.current) {
       outletRef?.current.scrollIntoView({ behavior: "smooth", block: "center"});
     }
+    if (outletRef.current?.innerHTML !== "") {
+      document.body.style.overflow = "visible";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   }, [location]);
 
   return (
@@ -37,6 +42,8 @@ export default function Home() {
         <Main 
           hovered={hovered}
           setHovered={setHovered}
+          active={active}
+          setActive={setActive}
         />
       </div>
       <div ref={outletRef}>

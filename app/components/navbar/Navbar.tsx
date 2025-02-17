@@ -28,6 +28,7 @@ export default function Navbar({ active, setActive, setHovered } : NavBarProps){
                 onMouseLeave={() => setHovered(null)}
               >
                 <Link 
+                  key={data.navItem}
                   className={`${styles.link} ${active === data.navItem ? styles.active : ""}`} 
                   to={`/${data.navItem}`}
                 >

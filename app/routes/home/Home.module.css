@@ -5,7 +5,7 @@
 }
 
 .bgGradient {
-    position: absolute;
+    position: fixed;
     top: -100%;
     left: -150%;
     width: 250vw;  /* Ensures full viewport width */

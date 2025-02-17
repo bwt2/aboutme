@@ -43,7 +43,7 @@ export default function ConstellationLine (
         x2={coords.x2}
         y2={coords.y2}
         stroke="white" 
-        stroke-width="4"
+        strokeWidth="4"
         opacity="25%"
       >
         <animate
