@@ -19,10 +19,9 @@ export default function Star ({hovered, setHovered, data, style, refList}: StarP
                 <p>{data.navItem}</p>
             </div>
         }
-        {hovered === data.star && 
-        <div className={styles.starDecor}>
-            ★ 
-        </div>}
+        <div className={`${styles.starDecor} ${hovered !== data.star && styles.starDecorOff}`}>
+            ✶ 
+        </div>
     </>);
     
     return (

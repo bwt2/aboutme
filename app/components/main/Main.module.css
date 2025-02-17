@@ -35,13 +35,50 @@
     background-color: transparent;
 }
 
+.starDecorOff {
+    opacity: 0%;
+    transform: scale(0);
+}
+
 .starDecor {
     position: absolute;
     font-size: 5rem;
     top: 0;
     left: 0;
-    transform: translate(-50%, -55%);
+    transform: translate(-49.5%, -51.5%);
+    transform: scale(1);
+    animation: spin-normal linear 15s infinite normal;
+    transition: opacity 2s, scale 2s;
 }
+
+.starDecor::after {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: 0;
+    content: '✶';
+    opacity: 25%;
+    transform: rotate(30deg) scale(2);
+    animation: spin linear 5s infinite normal;
+}
+
+@keyframes spin-normal  {
+    0% {
+        transform: translate(-49.5%, -51.5%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-49.5%, -51.5%) rotate(360deg);
+    }
+  }
+
+@keyframes spin  {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+  }
 
 .starDecor:hover {
     opacity: 50%;
