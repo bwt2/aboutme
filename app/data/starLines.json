@@ -1,0 +1,38 @@
+[
+    {
+        "head": "denebola",
+        "tail": "theta"
+    },
+    {
+        "head": "denebola",
+        "tail": "delta"
+    },
+    {
+        "head": "theta",
+        "tail": "regulus"
+    },
+    {
+        "head": "eta",
+        "tail": "gamma"
+    },
+    {
+        "head": "delta",
+        "tail": "gamma"
+    },
+    {
+        "head": "gamma",
+        "tail": "zeta"
+    },
+    {
+        "head": "zeta",
+        "tail": "mu"
+    },
+    {
+        "head": "mu",
+        "tail": "epsilon"
+    },
+    {
+        "head": "regulus",
+        "tail": "eta"
+    }
+]
