@@ -12,6 +12,19 @@ interface StarProps {
 }
 
 export default function Star ({hovered, setHovered, data, style, refList}: StarProps) {
+    const decor = (<>
+        {data.navItem &&
+            <div className={styles.starAnnotation}>
+                <h1>{data.navIndex && data.navIndex.toString().padStart(2, "0")}</h1>
+                <p>{data.navItem}</p>
+            </div>
+        }
+        {hovered === data.star && 
+        <div className={styles.starDecor}>
+            ★ 
+        </div>}
+    </>);
+    
     return (
       data.navItem !== null ? (
         <Link 
@@ -21,13 +34,7 @@ export default function Star ({hovered, setHovered, data, style, refList}: StarP
           to={`/${data.navItem}`}
           ref={(elem: HTMLAnchorElement) => {refList.current[data.star] = elem;}}
         >
-          {data.navItem &&
-            <div className={styles.starAnnotation}>
-              <h1>{data.navIndex && data.navIndex.toString().padStart(2, "0")}</h1>
-              <p>{data.navItem}</p>
-            </div>
-          }
-          { hovered === data.star && <div className={styles.starDecor}/>}
+            {decor}
         </Link> 
       ) : (
         <div 
@@ -36,13 +43,7 @@ export default function Star ({hovered, setHovered, data, style, refList}: StarP
           onMouseLeave={() => setHovered(null)}
           ref={(elem: HTMLDivElement) => {refList.current[data.star] = elem;}}
         >
-          {data.navItem &&
-            <div className={styles.starAnnotation}>
-              <h1>{data.navIndex && data.navIndex.toString().padStart(2, "0")}</h1>
-              <p>{data.navItem}</p>
-            </div>
-          }
-          { hovered === data.star && <div className={styles.starDecor}/>}
+            {decor}
         </div> 
       )
     )
