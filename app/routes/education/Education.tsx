@@ -1,4 +1,12 @@
+import type { Route } from "./+types/Education";
 import styles from "./Education.module.css";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "btja | Education" },
+    { name: "Education", content: "Past education history"}
+  ]
+}
 
 export default function Education() {
     return (

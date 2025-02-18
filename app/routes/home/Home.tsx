@@ -9,7 +9,7 @@ import { Outlet, useLocation, type Location } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "btja" },
+    { title: "btja | Home" },
     { name: "Home Page", content: "Welcome to my website" },
   ];
 }
@@ -24,7 +24,7 @@ export default function Home() {
     if (outletRef.current) {
       outletRef?.current.scrollIntoView({ behavior: "smooth", block: "center"});
     }
-    if (outletRef.current?.innerHTML !== "") {
+    if (outletRef.current?.innerHTML !== "") { // can be improved
       document.body.style.overflow = "visible";
     } else {
       document.body.style.overflow = "hidden";
@@ -45,10 +45,7 @@ export default function Home() {
           active={active}
           setActive={setActive}
         />
-        <div className={styles.intro}>
-          B<span>rian</span> <br/> 
-          tja<span>hjadi</span>
-        </div>
+        <Intro/>
       </div>
       <div ref={outletRef}>
         <Outlet/>
@@ -57,4 +54,16 @@ export default function Home() {
       <div className={styles.bgGradient}/>
     </>
   );
+}
+
+function Intro () {
+  return (
+    <div className={styles.intro}>
+      <h1>
+        B<span>rian</span> <br/> 
+        tja<span>hjadi</span>
+      </h1>
+      <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p>
+    </div>
+  )
 }

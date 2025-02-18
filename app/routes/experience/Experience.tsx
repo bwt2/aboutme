@@ -1,4 +1,12 @@
+import type { Route } from "./+types/Experience";
 import styles from "./Experience.module.css";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "btja | Experience" },
+    { name: "Experience", content: "History of my past work, research, and extracurriculars" },
+  ];
+}
 
 export default function Experience() {
     return (
