@@ -10,8 +10,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function AboutMe() {
     return (
-        <div className={styles.temp}>
-            About Me
+        <div className={styles.content}>
+            <h1>About Me</h1>
+            <main>
+              <p>I enjoy coding to make ideas come to life.</p>
+            </main>
         </div>
     )
 }

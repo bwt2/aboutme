@@ -35,7 +35,12 @@ export default function Navbar({ active, setActive, setHovered } : NavBarProps){
                   {data.navItem}
                 </Link>
               </li>
-              { index !== (navbarStarData.length-1) && <li key={`b-${index}`} className={styles.border}/>}
+              {index !== (navbarStarData.length-1) && 
+                <li 
+                  key={`b-${index}`} 
+                  className={styles.border}
+                />
+              }
             </>
           })}
         </ul>

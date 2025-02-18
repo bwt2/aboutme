@@ -1,16 +1,30 @@
-
 .content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    padding-top: 2.5rem;
+    padding-bottom: 10%;
+}
+
+.content > main {
+    align-items: center;
 }
 
 .content > h1 {
     color: white;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 3rem;
+    margin-bottom: 2rem;
+    align-items: center;
 }
 
-.content > p {
+main > p {
+    color: white;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
 
+span {
+    font-weight: bold;
 }
