@@ -45,6 +45,10 @@ export default function Home() {
           active={active}
           setActive={setActive}
         />
+        <div className={styles.intro}>
+          B<span>rian</span> <br/> 
+          tja<span>hjadi</span>
+        </div>
       </div>
       <div ref={outletRef}>
         <Outlet/>

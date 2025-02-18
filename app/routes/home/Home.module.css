@@ -18,7 +18,22 @@
     opacity: 75%;
 }
 
+.intro {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    left: 20%;   
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+}
+
+.intro > span {
+    color: grey;
+}
+
 body { 
     background-color: var(--background-color);
     position: relative;
 }
+
