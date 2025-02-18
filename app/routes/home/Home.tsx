@@ -18,6 +18,7 @@ export default function Home() {
   const [active, setActive] = useState<navItem | null>(null);
   const [hovered, setHovered] = useState<star | null>(null);
   const outletRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
+  const introRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const location: Location = useLocation();
 
   useEffect(() => {
@@ -30,6 +31,20 @@ export default function Home() {
       document.body.style.overflow = "hidden";
     }
   }, [location]);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      if (introRef.current){
+        introRef.current.style.opacity = "100%";
+      }
+    };
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+    return () => window.removeEventListener("load", handleLoad);
+  }, [])
 
   return (
     <>
@@ -45,7 +60,9 @@ export default function Home() {
           active={active}
           setActive={setActive}
         />
-        <Intro/>
+        <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
+          <Intro/>
+        </div>
       </div>
       <div ref={outletRef}>
         <Outlet/>

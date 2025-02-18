@@ -23,6 +23,17 @@
         0 0 70px 35px rgba(0, 255, 255, 0.315); /* outer cyan */
 }
 
+.link::after {
+    content: "";
+    position: absolute; /* Needed for correct positioning */
+    border: 5px double white; /* Border is now visible */
+    top: 50%;
+    left: 50%;
+    padding: 1rem;
+    transform: translate(-50%, -50%) rotate(45deg); /* Position correctly */
+    opacity: 50%;
+}
+
 .star::before { /* increase star hitbox */ 
     content: "";
     position: absolute;
