@@ -80,7 +80,8 @@ function Intro () {
         B<span>rian</span> <br/> 
         tja<span>hjadi</span>
       </h1>
-      <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p>
+      <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p><br/>
+      <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p>
     </div>
   )
 }
