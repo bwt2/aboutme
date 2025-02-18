@@ -1,0 +1,28 @@
+.nav {
+    position: fixed;
+    top: 2rem;
+    color: white;
+    width: 100%;
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    z-index: 1;
+}
+
+.nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav > ul > .border {
+    border-right: 0.1rem solid white;
+    min-height: 2rem;
+    transform: translateY(-25%);
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    text-decoration: underline;
+}

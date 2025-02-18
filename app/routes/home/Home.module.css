@@ -1,16 +1,48 @@
-.main {
-    background-color: var(--background-color);
+.layout {
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
 }
 
-.main > h1 {   
-    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
+.bgGradient {
+    position: fixed;
+    top: -100%;
+    left: -150%;
+    width: 250vw;  /* Ensures full viewport width */
+    height: 200%; /* Ensures full viewport height */
+    background: radial-gradient(circle at center, 
+        #391E2A 20%, 
+        #272230 50%, 
+        #11202B 80%);
+    z-index: -1;
+    opacity: 75%;
 }
+
+.intro {
+    position: absolute;
+    top: 20%;
+    left: 12.5%;   
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+}
+
+.intro > h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.intro > h1 > span  {
+    color: grey;
+}
+
+.intro > p  {
+    color: white;
+    font-size: 0.9rem;
+}
+
+body { 
+    background-color: var(--background-color);
+    position: relative;
+}
+

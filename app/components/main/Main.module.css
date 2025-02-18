@@ -1,0 +1,164 @@
+.main {
+    color: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.star {
+    position: absolute;
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-5vh);
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    box-shadow: /* x-offset y-offset blur-radius spread-radius */
+        0 0 30px 5px #ffffff41,  /* inner white */
+        0 0 50px 20px rgba(255, 0, 255, 0.363), /* middle magenta */
+        0 0 70px 35px rgba(0, 255, 255, 0.315); /* outer cyan */
+}
+
+.link::after {
+    content: "";
+    position: absolute; /* Needed for correct positioning */
+    border: 5px double white; /* Border is now visible */
+    top: 50%;
+    left: 50%;
+    padding: 1rem;
+    transform: translate(-50%, -50%) rotate(45deg); /* Position correctly */
+    opacity: 50%;
+}
+
+.star::before { /* increase star hitbox */ 
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px; 
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.starDecorOff {
+    opacity: 0%;
+    transform: scale(0);
+}
+
+.starDecor {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: 0;
+    transform: translate(-49.5%, -51.5%);
+    transform: scale(1);
+    animation: spin-normal linear 15s infinite normal;
+    transition: opacity 2s, scale 2s;
+}
+
+.starDecor::after {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: 0;
+    content: '✶';
+    opacity: 25%;
+    transform: rotate(30deg) scale(2);
+    animation: spin linear 5s infinite normal;
+}
+
+@keyframes spin-normal  {
+    0% {
+        transform: translate(-49.5%, -51.5%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-49.5%, -51.5%) rotate(360deg);
+    }
+  }
+
+@keyframes spin  {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+  }
+
+.starDecor:hover {
+    opacity: 50%;
+}
+
+.starAnnotation {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.starAnnotation > h1 {
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 1px;
+    border: 1px solid white;
+    opacity: 50%;
+}
+
+.starAnnotation > p {
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.denebola {
+    top: 90%;
+    left: 17.5%;
+}
+
+.theta {
+    top: 82.5%;
+    left: 37%;
+}
+
+.delta {
+    top: 70%;
+    left: 32%;
+}
+
+.regulus {
+    top: 75%;
+    left: 76.5%;
+}
+
+.eta {
+    top: 55%;
+    left: 72%;
+}
+
+.gamma {
+    top: 50%;
+    left: 62%;
+}
+
+.zeta {
+    top: 39%;
+    left: 59.5%;
+}
+
+.mu {
+    top: 18.5%;
+    left: 68.5%;
+}
+
+.epsilon {
+    top: 23%;
+    left: 75.5%;
+}

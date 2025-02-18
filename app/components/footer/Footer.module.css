@@ -1,0 +1,24 @@
+.footer {
+    position: fixed;
+    bottom: 2rem;
+    color: white;
+    width: 100%;
+    font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
+    z-index: 1;
+}
+
+.footer > ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    gap: 2rem;
+}
+
+.footer > ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer > ul > li:hover {
+    text-decoration: underline;
+}

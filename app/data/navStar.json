@@ -1,0 +1,47 @@
+[
+    {
+        "star": "denebola",
+        "navIndex": 5,
+        "navItem": "Skills"
+    },
+    {
+        "star": "theta",
+        "navIndex": null,
+        "navItem": null
+    },
+    {
+        "star": "delta",
+        "navIndex": 4,
+        "navItem": "Projects"
+    },
+    {
+        "star": "regulus",
+        "navIndex": 1,
+        "navItem": "About Me"
+    },
+    {
+        "star": "eta",
+        "navIndex": 2,
+        "navItem": "Education"
+    },
+    {
+        "star": "gamma",
+        "navIndex": null,
+        "navItem": null
+    },
+    {
+        "star": "zeta",
+        "navIndex": null,
+        "navItem": null
+    },
+    {
+        "star": "mu",
+        "navIndex": null,
+        "navItem": null
+    },
+    {
+        "star": "epsilon",
+        "navIndex": 3,
+        "navItem": "Experience"
+    }
+]
