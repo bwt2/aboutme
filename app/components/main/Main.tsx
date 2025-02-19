@@ -12,9 +12,10 @@ interface MainProps {
   setHovered: setHoveredHook,
   active: navItem | null,
   setActive: setActiveHook,
+  introRef: React.RefObject<HTMLDivElement | null>
 }
 
-export default function Main ({ hovered, setHovered, active, setActive } : MainProps) {
+export default function Main ({ hovered, setHovered, active, setActive, introRef } : MainProps) {
   const typedStarData: starData[] = navStarData as starData[];
   const starLineData: starLine[] = starLines as starLine[];
   const starRefs: React.RefObject<starRef> = useRef<starRef>({} as starRef);
@@ -39,15 +40,16 @@ export default function Main ({ hovered, setHovered, active, setActive } : MainP
         id="constellationViewBox"
         width="100%"
         height="100%"
-        style={{ position: "relative", top: 0, left: 0, pointerEvents: "none" }}
+        style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}
       >
         {starLineData.map((data) => {
           return (
-            starRefs.current[data.head] && starRefs.current[data.tail] &&
+            starRefs.current[data.head] && starRefs.current[data.tail] && introRef.current &&
             <ConstellationLine
               key={`${data.head}->${data.tail}`}
               headElem={starRefs.current[data.head]}
               tailElem={starRefs.current[data.tail]}
+              introElem={introRef.current}
             />
           )
         })}
