@@ -15,8 +15,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const [active, setActive] = useState<navItem | null>(null);
-  const [hovered, setHovered] = useState<star | null>(null);
+
   const outletRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const introRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const location: Location = useLocation();
@@ -48,29 +47,38 @@ export default function Home() {
 
   return (
     <>
-      <Navbar 
-        active={active} 
-        setActive={setActive}
-        setHovered={setHovered}
-      />
-      <div className={styles.layout}>
-        <Main 
-          hovered={hovered}
-          setHovered={setHovered}
-          active={active}
-          setActive={setActive}
-        />
-        <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
-          <Intro/>
-        </div>
-      </div>
-      <div ref={outletRef}>
-        <Outlet/>
-      </div>
+      <NavBarAndMain introRef={introRef}/>
+      <div ref={outletRef}> <Outlet/> </div>
       <Footer/>
       <div className={styles.bgGradient}/>
     </>
   );
+}
+
+function NavBarAndMain ({ introRef } : { introRef: React.RefObject<HTMLDivElement | null> }) {
+  const [active, setActive] = useState<navItem | null>(null);
+  const [hovered, setHovered] = useState<star | null>(null);
+
+  return (
+  <>
+    <Navbar 
+      active={active} 
+      setActive={setActive}
+      setHovered={setHovered}
+    />
+    <div className={styles.layout}>
+      <Main 
+        hovered={hovered}
+        setHovered={setHovered}
+        active={active}
+        setActive={setActive}
+      />
+      <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
+        <Intro/>
+      </div>
+    </div>
+  </>
+  )
 }
 
 function Intro () {

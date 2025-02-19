@@ -26,3 +26,19 @@
 .active {
     text-decoration: underline;
 }
+
+@media (max-width: 1000px) {
+    .nav > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav > ul > .border {
+        border: none;
+        border-bottom: 0.1rem solid white;
+        min-width: 2rem;
+        transform: translateY(-50%);
+    }    
+}
