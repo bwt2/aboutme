@@ -1,8 +1,9 @@
-import { useRef, type RefObject } from "react";
+import React, { useRef, type RefObject } from "react";
 import Star from "~/components/main/Star";
 import ConstellationLine from "~/components/main/ConstellationLine";
 import type { starRef, star, starData, setHoveredHook, starLine, navItem, setActiveHook } from "~/types/types";
 import styles from "./Main.module.css";
+import starPositions from "./starPositions.module.css";
 import navStarData from "~/data/navStar.json";
 import starLines from "~/data/starLines.json";
 
@@ -10,13 +11,13 @@ interface MainProps {
   hovered : star | null, 
   setHovered: setHoveredHook,
   active: navItem | null,
-  setActive: setActiveHook
+  setActive: setActiveHook,
 }
 
 export default function Main ({ hovered, setHovered, active, setActive } : MainProps) {
   const typedStarData: starData[] = navStarData as starData[];
   const starLineData: starLine[] = starLines as starLine[];
-  const starRefs = useRef<starRef>({} as starRef);
+  const starRefs: React.RefObject<starRef> = useRef<starRef>({} as starRef);
 
   return (
     <main className={styles.main}>
@@ -27,7 +28,7 @@ export default function Main ({ hovered, setHovered, active, setActive } : MainP
             hovered={hovered} 
             setHovered={setHovered} 
             data={data}
-            style={styles[data.star as keyof typeof styles]}
+            style={starPositions[data.star as keyof typeof styles]}
             refList={starRefs}
             active={active}
             setActive={setActive}

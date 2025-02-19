@@ -2,7 +2,7 @@
     color: white;
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .link {
@@ -118,47 +118,35 @@
     font-size: 2rem;
 }
 
-.denebola {
-    top: 90%;
-    left: 17.5%;
-}
+@media (max-width: 1000px) {
+    .main {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .starAnnotation {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-43.5%);
+    }
 
-.theta {
-    top: 82.5%;
-    left: 37%;
-}
+    .starAnnotation > p {
+        margin-top: 0.5rem;
+        text-align: center;
+        font-size: 1rem;
+    }
 
-.delta {
-    top: 70%;
-    left: 32%;
-}
-
-.regulus {
-    top: 75%;
-    left: 76.5%;
-}
-
-.eta {
-    top: 55%;
-    left: 72%;
-}
-
-.gamma {
-    top: 50%;
-    left: 62%;
-}
-
-.zeta {
-    top: 39%;
-    left: 59.5%;
-}
-
-.mu {
-    top: 18.5%;
-    left: 68.5%;
-}
-
-.epsilon {
-    top: 23%;
-    left: 75.5%;
+    svg {
+        display: none;
+    }
 }

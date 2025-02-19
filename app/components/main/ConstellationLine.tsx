@@ -8,7 +8,10 @@ type coordinates = {
 }
 
 export default function ConstellationLine (
-  {headElem, tailElem} : {headElem: HTMLDivElement | HTMLAnchorElement, tailElem: HTMLDivElement | HTMLAnchorElement}
+  {headElem, tailElem} : {
+    headElem: HTMLDivElement | HTMLAnchorElement, 
+    tailElem: HTMLDivElement | HTMLAnchorElement,
+  }
 ) {
     const [coords, setCoords] = useState<coordinates>({ x1: 0, y1: 0, x2: 0, y2: 0 });
     const randomTimer = useRef(Math.floor(Math.random()*10)+5);
@@ -21,7 +24,7 @@ export default function ConstellationLine (
   
         const headRect: DOMRect = headElem.getBoundingClientRect();
         const tailRect: DOMRect = tailElem.getBoundingClientRect();
-  
+
         setCoords({
           x1: headRect.left + headRect.width / 2 + window.scrollX,
           y1: headRect.top + headRect.height / 2 + window.scrollY,
