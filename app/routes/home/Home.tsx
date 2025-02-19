@@ -15,13 +15,14 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const layoutRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const outletRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const introRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const location: Location = useLocation();
 
   useEffect(() => {
-    outletRef.current?.scrollIntoView({ behavior: "smooth", block: "center"});
+    if (outletRef.current?.innerHTML !== ""){
+      outletRef.current?.scrollIntoView({ behavior: "smooth", block: "center"});
+    }
   }, [location]);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ function NavBarAndMain ({introRef} : {introRef: React.RefObject<HTMLDivElement |
       setHovered={setHovered}
       active={active}
       setActive={setActive}
+      introRef={introRef}
     />
   </>
   )
@@ -85,7 +87,7 @@ function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>})
           <li>Robotics Software Engineer</li>
           <li>Game Developer</li>
         </ul>
-        <p style={{ color: 'white' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p>
+        <p style={{ color: 'white', alignSelf: 'center', textAlign: 'center', marginTop: '1rem' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p>
       </div>
     </div>
   )
