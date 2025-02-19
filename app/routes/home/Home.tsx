@@ -85,7 +85,7 @@ function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>})
           <li>Robotics Software Engineer</li>
           <li>Game Developer</li>
         </ul>
-        {/* <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p> */}
+        <p style={{ color: 'white' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p>
       </div>
     </div>
   )
