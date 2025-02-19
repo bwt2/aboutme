@@ -36,7 +36,6 @@ export default function Star ({hovered, setHovered, data, style, refList, active
                 ✶ 
             </div>
         }
-
     </>);
     
     return (

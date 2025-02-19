@@ -3,6 +3,7 @@ import Star from "~/components/main/Star";
 import ConstellationLine from "~/components/main/ConstellationLine";
 import type { starRef, star, starData, setHoveredHook, starLine, navItem, setActiveHook } from "~/types/types";
 import styles from "./Main.module.css";
+import starPositions from "./starPositions.module.css";
 import navStarData from "~/data/navStar.json";
 import starLines from "~/data/starLines.json";
 
@@ -27,7 +28,7 @@ export default function Main ({ hovered, setHovered, active, setActive } : MainP
             hovered={hovered} 
             setHovered={setHovered} 
             data={data}
-            style={styles[data.star as keyof typeof styles]}
+            style={starPositions[data.star as keyof typeof styles]}
             refList={starRefs}
             active={active}
             setActive={setActive}

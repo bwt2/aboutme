@@ -15,27 +15,18 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-
+  const layoutRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const outletRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const introRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
   const location: Location = useLocation();
 
   useEffect(() => {
-    if (outletRef.current) {
-      outletRef?.current.scrollIntoView({ behavior: "smooth", block: "center"});
-    }
-    if (outletRef.current?.innerHTML !== "") { // can be improved
-      document.body.style.overflow = "visible";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
+    outletRef.current?.scrollIntoView({ behavior: "smooth", block: "center"});
   }, [location]);
 
   useEffect(() => {
     const handleLoad = () => {
-      if (introRef.current){
-        introRef.current.style.opacity = "100%";
-      }
+      if (introRef.current) introRef.current.style.opacity = "100%";
     };
     if (document.readyState === "complete") {
       handleLoad();
@@ -47,15 +38,20 @@ export default function Home() {
 
   return (
     <>
-      <NavBarAndMain introRef={introRef}/>
-      <div ref={outletRef}> <Outlet/> </div>
+      <div className={styles.container}>
+        <NavBarAndMain/>
+        <Intro introRef={introRef}/>
+      </div>
+      <div ref={outletRef}>
+        <Outlet/>
+      </div>
       <Footer/>
       <div className={styles.bgGradient}/>
     </>
   );
 }
 
-function NavBarAndMain ({ introRef } : { introRef: React.RefObject<HTMLDivElement | null> }) {
+function NavBarAndMain () {
   const [active, setActive] = useState<navItem | null>(null);
   const [hovered, setHovered] = useState<star | null>(null);
 
@@ -66,30 +62,27 @@ function NavBarAndMain ({ introRef } : { introRef: React.RefObject<HTMLDivElemen
       setActive={setActive}
       setHovered={setHovered}
     />
-    <div className={styles.layout}>
-      <Main 
-        hovered={hovered}
-        setHovered={setHovered}
-        active={active}
-        setActive={setActive}
-      />
-      <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
-        <Intro/>
-      </div>
-    </div>
+    <Main 
+      hovered={hovered}
+      setHovered={setHovered}
+      active={active}
+      setActive={setActive}
+    />
   </>
   )
 }
 
-function Intro () {
+function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>}) {
   return (
-    <div className={styles.intro}>
-      <h1>
-        B<span>rian</span> <br/> 
-        tja<span>hjadi</span>
-      </h1>
-      <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p><br/>
-      <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p>
+    <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
+      <div className={styles.intro}>
+        <h1>
+          B<span>rian</span> <br/> 
+          tja<span>hjadi</span>
+        </h1>
+        <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p><br/>
+        <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p>
+      </div>
     </div>
   )
 }
