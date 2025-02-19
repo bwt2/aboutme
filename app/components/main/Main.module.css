@@ -2,8 +2,7 @@
     color: white;
     position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 .link {
@@ -120,14 +119,34 @@
 }
 
 @media (max-width: 1000px) {
+    .main {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
     .starAnnotation {
         position: absolute;
-        top: 50px;
+        top: 35px;
         left: 0;
         white-space: nowrap;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        transform: translateX(-43.5%);
+    }
+
+    .starAnnotation > p {
+        margin-top: 0.5rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    svg {
+        display: none;
     }
 }

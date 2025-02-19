@@ -1,6 +1,6 @@
 import type { Route } from ".react-router/types/app/routes/home/+types/Home";
 import type { navItem, star } from "~/types/types";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Home.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -39,10 +39,10 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <NavBarAndMain/>
         <Intro introRef={introRef}/>
+        <NavBarAndMain introRef={introRef}/>
       </div>
-      <div ref={outletRef}>
+      <div ref={outletRef} style={{ marginBottom: "3rem" }}>
         <Outlet/>
       </div>
       <Footer/>
@@ -51,7 +51,7 @@ export default function Home() {
   );
 }
 
-function NavBarAndMain () {
+function NavBarAndMain ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>}) {
   const [active, setActive] = useState<navItem | null>(null);
   const [hovered, setHovered] = useState<star | null>(null);
 
@@ -80,8 +80,12 @@ function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>})
           B<span>rian</span> <br/> 
           tja<span>hjadi</span>
         </h1>
-        <p>Full-Stack Developer | Robotics Software Engineer | Game Developer</p><br/>
-        <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p>
+        <ul>
+          <li>Full-Stack Developer</li>
+          <li>Robotics Software Engineer</li>
+          <li>Game Developer</li>
+        </ul>
+        {/* <p>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Pre-Alpha version</span> of the site, stay tuned for updates!</p> */}
       </div>
     </div>
   )

@@ -14,8 +14,9 @@
 
 .nav > ul > .border {
     border-right: 0.1rem solid white;
-    min-height: 2rem;
-    transform: translateY(-25%);
+    min-height: 1rem;
+    align-self: center;
+    transform: scaleY(2);
 }
 
 .link {
@@ -29,16 +30,10 @@
 
 @media (max-width: 1000px) {
     .nav > ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        min-width: 500px;
+        font-size: 4vw;
     }
-
-    .nav > ul > .border {
-        border: none;
-        border-bottom: 0.1rem solid white;
-        min-width: 2rem;
-        transform: translateY(-50%);
-    }    
+    .nav {
+        display: none;
+    }
 }
