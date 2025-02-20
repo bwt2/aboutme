@@ -28,3 +28,12 @@ main > p {
 span {
     font-weight: bold;
 }
+
+@media (max-width: 1000px){
+    main > p {
+        font-size: 4vw;
+    }
+    main {
+        padding: 1rem;
+    }
+}
