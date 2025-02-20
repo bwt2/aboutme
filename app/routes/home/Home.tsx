@@ -20,22 +20,11 @@ export default function Home() {
   const location: Location = useLocation();
 
   useEffect(() => {
-    if (outletRef.current?.innerHTML !== ""){
-      outletRef.current?.scrollIntoView({ behavior: "smooth", block: "center"});
+    const outletRendered: boolean = outletRef.current?.innerHTML !== "";
+    if (outletRendered) {
+      outletRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [location]);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      if (introRef.current) introRef.current.style.opacity = "100%";
-    };
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-    return () => window.removeEventListener("load", handleLoad);
-  }, [])
 
   return (
     <>
@@ -43,7 +32,7 @@ export default function Home() {
         <Intro introRef={introRef}/>
         <NavBarAndMain introRef={introRef}/>
       </div>
-      <div ref={outletRef} style={{ marginBottom: "3rem" }}>
+      <div ref={outletRef}>
         <Outlet/>
       </div>
       <Footer/>
@@ -76,18 +65,17 @@ function NavBarAndMain ({introRef} : {introRef: React.RefObject<HTMLDivElement |
 
 function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>}) {
   return (
-    <div ref={introRef} style={{ opacity: "0", transition: "opacity 2s ease-in-out"}}>
+    <div ref={introRef}>
       <div className={styles.intro}>
         <h1>
-          B<span>rian</span> <br/> 
-          tja<span>hjadi</span>
+          Brian Tjahjadi
         </h1>
         <ul>
           <li>Full-Stack Developer</li>
           <li>Robotics Software Engineer</li>
           <li>Game Developer</li>
         </ul>
-        <p style={{ color: 'white', alignSelf: 'center', textAlign: 'center', marginTop: '1rem' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p>
+        {/* <p style={{ color: 'white', alignSelf: 'center', textAlign: 'center', marginTop: '1rem' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p> */}
       </div>
     </div>
   )

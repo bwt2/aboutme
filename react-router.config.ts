@@ -5,6 +5,13 @@ export default {
   // Config options...
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,
-  prerender: ["/"],
+  prerender: [
+    "/", 
+    "/about me", 
+    "/education", 
+    "experience",
+    "/projects",
+    "/skills"
+  ],
   presets: [vercelPreset()],
 } satisfies Config;
