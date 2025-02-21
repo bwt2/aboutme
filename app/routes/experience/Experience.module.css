@@ -4,7 +4,7 @@
     align-items: center;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     padding-top: 2.5rem;
-    padding-bottom: 10%;
+    padding-bottom: 2.5rem;
 }
 
 .content > main {
@@ -19,19 +19,77 @@
     align-items: center;
 }
 
-main > p {
-    color: white;
-    line-height: 1.5rem;
-    margin-bottom: 1rem;
+.expList {
+    list-style: none;
+    counter-reset: item;
+    margin-top: 3rem;
 }
 
-span {
+.expList > li {
+    position: relative;  
+}
+
+.expList > li::before { /* number */
+    content: counter(item);
+    counter-increment: item;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
     font-weight: bold;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.expList > li::after {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(transparent, white, transparent);
+    transform: translateY(-25%);
+  }
+
+.expList > li:last-child:after {
+    display: none;
+}
+
+.expBorder {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    width: 3rem;
+    border: 1px double white;
+    transform: rotate(45deg);
+    z-index: 1;
+    background-color: #11202B;
+}
+
+.exp {
+    display: flex;
 }
 
 @media (max-width: 1000px){
     main > p {
         font-size: 4vw;
         padding: 1rem;
+    }
+
+    .expList {
+        padding-left: 5vw;
+    }
+
+    .expList > li {
+        align-self: center;
+        padding-left: 5vw;
+    }
+
+    .expList > li::before {
+        font-size: 5vw;
     }
 }

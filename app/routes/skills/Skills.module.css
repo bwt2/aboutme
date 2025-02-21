@@ -4,7 +4,7 @@
     align-items: center;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     padding-top: 2.5rem;
-    padding-bottom: 10%;
+    padding-bottom: 2.5rem;
 }
 
 .content > main {
