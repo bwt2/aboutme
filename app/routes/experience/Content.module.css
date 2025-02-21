@@ -1,0 +1,63 @@
+.expContent {
+    padding-left: 5rem;
+    margin-bottom: 5rem;
+}
+
+.expContent > h1 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.expContent > h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.expContent > h3 {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.expContent > ul {
+    max-width: 35vw;
+    font-size: 1rem;
+    list-style: inside;
+    list-style-position: outside;
+    color: white;
+    padding: 1rem;
+}
+
+.expContent > ul > li {
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+
+
+@media (max-width: 1000px){
+    .expContent {
+        padding-left: 15vw;
+        white-space: wrap;
+    }
+    .expContent > h1 {
+        font-size: 5vw;
+    }
+    
+    .expContent > h2 {
+        font-size: 4vw;
+    }
+    
+    .expContent > h3 {
+        font-size: 4vw;
+    }
+
+    .expContent > ul {
+        font-size: 4vw;
+        max-width: 50vw;
+    }
+}
