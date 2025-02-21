@@ -4,11 +4,12 @@
     align-items: center;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     padding-top: 2.5rem;
-    padding-bottom: 10%;
+    padding-bottom: 10rem;
 }
 
 .content > main {
     align-items: center;
+    max-width: 50vw;
 }
 
 .content > h1 {
@@ -33,5 +34,9 @@ span {
     main > p {
         font-size: 4vw;
         padding: 1rem;
+    }
+
+    .content > main {
+        max-width: 75vw;
     }
 }

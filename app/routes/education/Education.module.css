@@ -4,7 +4,7 @@
     align-items: center;
     font-family: var(--default-font), system-ui, Helvetica, Arial, sans-serif;
     padding-top: 2.5rem;
-    padding-bottom: 10%;
+    padding-bottom: 10rem;
 }
 
 .content > main {
@@ -30,8 +30,8 @@ span {
 }
 
 @media (max-width: 1000px){
-    main > p {
-        font-size: 4vw;
+    .content > main > p {
+        font-size: 3vw;
         padding: 1rem;
     }
 }
