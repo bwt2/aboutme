@@ -37,12 +37,10 @@ export default function Skills() {
                   <li>Vite</li>
                   <li>Docker</li>
                   <li>Linux (WSL2 Ubuntu)</li>
-                  <li>Vercel</li>
-                  <li>AWS</li>
                 </SkillCategory>
                 <SkillCategory heading={"Robotics"}>
                   <li>ROS 2</li>
-                  <li>Foxglove</li>
+                  <li>ROS 2 Control</li>
                   <li>C++</li>
                   <li>Python</li>
                 </SkillCategory>
@@ -50,7 +48,6 @@ export default function Skills() {
                   <li>Python</li>
                   <li>numpy</li>
                   <li>matplotlib</li>
-                  <li>pandas</li>
                   <li>Jupyter</li>
                 </SkillCategory>
                 <SkillCategory heading={"Other"}>
