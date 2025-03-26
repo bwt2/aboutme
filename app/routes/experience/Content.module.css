@@ -36,6 +36,7 @@
 .expContent > ul > li {
     margin-bottom: 1rem;
     line-height: 2rem;
+    font-size: 1rem;
 }
 
 
@@ -43,17 +44,6 @@
     .expContent {
         padding-left: 15vw;
         white-space: wrap;
-    }
-    .expContent > h1 {
-        font-size: 5vw;
-    }
-    
-    .expContent > h2 {
-        font-size: 4vw;
-    }
-    
-    .expContent > h3 {
-        font-size: 4vw;
     }
 
     .expContent > ul {
