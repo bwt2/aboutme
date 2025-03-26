@@ -21,9 +21,10 @@ export default function Experience() {
                         title={"Software Developer (Controls)"}
                         location={"Sydney, NSW"}
                     >
-                        <li>Written spin and active front rear steering ROS2 controller in C++ for finer control during rover recovery scenarios, deriving and implementing forward kinematics, inverse kinematics, and odometry</li>
-                        <li>Simulating rover sensor and physics using Gazebo and Rviz. Rewriting launch files to use Python, modularizing URDF using xacro, containerizing using Docker</li>
-                        <li>Written internal documentation on an Astro site using React and the rehype-mermaid plugin for mermaid diagrams</li>
+                        <li>Written spin and active front rear steering ROS2 C++ controller for autonomous and manual rover steering control.</li>
+                        <li>Written estop keep alive ROS2 C++ nodes, ensuring wireless connectivity between rover and base station at all times.</li>
+                        <li>Developing the rover base station UI using Foxglove and React, displaying rover sensor data for the rover's operator.</li>
+                        <li>Simulating and visualizing rover sensor and physics using Gazebo and Rviz, rewriting launch files from xml to Python, creating base URDF using xacro, containerizing using Docker. Written documentation on an Astro site using React.</li>
                     </ExperienceEntry>
                     <ExperienceEntry
                         company={"USYD Cybersecurity Society"}

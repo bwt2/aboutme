@@ -31,7 +31,6 @@ span {
 
 @media (max-width: 1000px){
     .content > main > p {
-        font-size: 3vw;
         padding: 1rem;
     }
 }
