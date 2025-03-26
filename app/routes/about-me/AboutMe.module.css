@@ -30,8 +30,7 @@ span {
 }
 
 @media (max-width: 1000px){
-    /* main > p {
-        font-size: 4vw;
+    main > p {
         padding: 1rem;
-    } */
+    }
 }

@@ -51,7 +51,9 @@
     height: 200%;
     background: linear-gradient(transparent, white, transparent);
     transform: translateY(-25%);
-  }
+}
+
+
 
 .expList > li:last-child:after {
     display: none;
@@ -93,5 +95,8 @@
 @media (max-width: 500px){
     .expBorder {
         transform: rotate(45deg) scale(0.75);
+    }
+    .expList > li::after {
+        transform: translateY(-25%) scale(0.5);
     }
 }

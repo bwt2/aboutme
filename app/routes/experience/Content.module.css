@@ -43,6 +43,7 @@
 @media (max-width: 1000px){
     .expContent {
         padding-left: 15vw;
+        padding-right: 1rem;
         white-space: wrap;
     }
 
