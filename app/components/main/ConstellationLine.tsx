@@ -42,6 +42,17 @@ export default function ConstellationLine (
     }, [headElem, tailElem]);
   
     return (
+      <svg 
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+        zIndex: 0,
+      }}
+    >
       <line 
         x1={coords.x1}
         y1={coords.y1}
@@ -49,14 +60,15 @@ export default function ConstellationLine (
         y2={coords.y2}
         stroke="white" 
         strokeWidth="4"
-        opacity="25%"
+        opacity="0.25"
       >
         <animate
           attributeName="opacity"
-          values="0%;25%;0%"
-          dur={randomTimer.current}
+          values="0;0.25;0"
+          dur={`${randomTimer.current}s`}
           repeatCount="indefinite" 
         />
       </line>
+    </svg>
     )
 }
