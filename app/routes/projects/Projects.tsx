@@ -14,7 +14,7 @@ export default function Projects() {
             <h1>Projects</h1>
             <main>
               <ProjectEntry
-                title={"Game Based Learning"}
+                title={"GBL (Game Based Learning) App"}
                 link={null}
                 linkName={null}
               >
@@ -34,7 +34,7 @@ export default function Projects() {
                 link={"https://slidle.vercel.app"}
                 linkName={"slidle.vercel.app"}
               >
-                <li>Finalist project for the 2024 USRC USYD Hackathon. Interactive data visualization of orientation, position, altitude data of a satellite beacon device using React, Typescript, and TailwindCSS visualized using D3.js and Three.js.</li>
+                <li>Simple sliding block puzzle game for fun.</li>
               </ProjectEntry>
             </main>
         </div>

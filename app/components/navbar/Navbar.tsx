@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import type { navItem, star, setActiveHook, setHoveredHook, starData, navbarStarData } from "~/types/types";
 import styles from "./Navbar.module.css";
 import navStarData from "~/data/navStar.json";
+import { Fragment } from "react/jsx-runtime";
 
 interface NavBarProps {
   active: navItem | null, 
@@ -20,7 +21,7 @@ export default function Navbar({ active, setActive, setHovered } : NavBarProps){
     <nav className={styles.nav}>
         <ul>
           {navbarStarData.map((data, index) => {
-            return <>
+            return <Fragment key={data.navIndex}>
               <li 
                 key={data.navIndex}
                 onClick={() => setActive(data.navItem)}
@@ -41,7 +42,7 @@ export default function Navbar({ active, setActive, setHovered } : NavBarProps){
                   className={styles.border}
                 />
               }
-            </>
+            </Fragment>
           })}
         </ul>
     </nav>

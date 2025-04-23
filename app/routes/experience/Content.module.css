@@ -38,6 +38,18 @@
     line-height: 2rem;
 }
 
+.expContent span {
+    line-height: 200%;
+}
+
+.expContent a {
+    text-decoration: none;
+    color: white
+}
+
+.expContent a:hover {
+    text-decoration: underline;
+}
 
 @media (max-width: 1000px){
     .expContent {

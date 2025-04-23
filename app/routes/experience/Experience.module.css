@@ -53,8 +53,6 @@
     transform: translateY(-25%);
 }
 
-
-
 .expList > li:last-child:after {
     display: none;
 }

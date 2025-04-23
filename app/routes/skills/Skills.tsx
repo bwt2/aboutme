@@ -21,11 +21,16 @@ export default function Skills() {
                   <li>TypeScript</li>
                   <li>TailwindCSS</li>
                   <li>D3.js</li>
+                  <li>Relay</li>
+                  <li>Shadcn</li>
                 </SkillCategory>
                 <SkillCategory heading={"Backend and Databases"}>
                   <li>Python</li>
                   <li>Django</li>
                   <li>FastAPI</li>
+                  <li>Express</li>
+                  <li>GraphQL</li>
+                  <li>DrizzleORM</li>
                   <li>SQLAlchemy</li>
                   <li>PostgreSQL</li>
                   <li>MySQL</li>
@@ -36,7 +41,8 @@ export default function Skills() {
                   <li>Poetry</li>
                   <li>Vite</li>
                   <li>Docker</li>
-                  <li>Linux (WSL2 Ubuntu)</li>
+                  <li>Linux / WSL2 Ubuntu</li>
+                  <li>AWS</li>
                 </SkillCategory>
                 <SkillCategory heading={"Robotics"}>
                   <li>ROS 2</li>
