@@ -24,6 +24,8 @@
     flex-direction: column;
     color: white;
     padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .skillCategory {
@@ -63,9 +65,9 @@
         padding: 1rem;
     }
 
-    .content > h1 {
+    /* .content > h1 {
         font-size: 7vw;
-    }
+    } */
     
     .skillCategory {
         display: flex;
@@ -77,7 +79,7 @@
 
     .skillCategory > h2 {
         min-width: fit-content;
-        font-size: 4vw;
+        /* font-size: 4vw; */
         white-space: wrap;
     }
 
@@ -86,6 +88,6 @@
         grid-template-columns: repeat(2, minmax(1vw, 1fr));
         row-gap: 1rem;
         column-gap: 1vw;
-        font-size: 3vw;
+        /* font-size: 3vw; */
     }
 }

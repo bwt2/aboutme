@@ -73,9 +73,20 @@ function Intro ({introRef} : {introRef: React.RefObject<HTMLDivElement | null>})
         <ul>
           <li>Full-Stack Developer</li>
           <li>Robotics Software Engineer</li>
-          <li>Game Developer</li>
+          <li>
+            <a target="_blank" href="https://slidle.vercel.app" style={{ 
+              position: 'relative', 
+              textDecoration: 'none', 
+              color: 'inherit', 
+              zIndex: '99'
+            }}>
+              Aspiring Game Developer
+            </a>
+          </li>
         </ul>
-        <p style={{ color: 'white', alignSelf: 'center', textAlign: 'center', marginTop: '1rem' }}>This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!</p>
+        {/* <p style={{ color: 'white', alignSelf: 'center', textAlign: 'left', marginTop: '1rem', lineHeight: '1.5rem'}}>
+          This is a <span style={{ color: 'red', fontWeight: 'bolder' }}>Early Development Build</span> of the site, stay tuned for updates!
+        </p> */}
       </div>
     </div>
   )

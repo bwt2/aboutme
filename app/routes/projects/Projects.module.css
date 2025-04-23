@@ -26,8 +26,24 @@ main > p {
     margin-bottom: 1rem;
 }
 
-span {
-    font-weight: bold;
+main > p ul {
+    list-style: disc outside;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+main > p h1 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+main > p h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1000px){

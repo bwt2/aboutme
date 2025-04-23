@@ -51,7 +51,9 @@
     height: 200%;
     background: linear-gradient(transparent, white, transparent);
     transform: translateY(-25%);
-  }
+}
+
+
 
 .expList > li:last-child:after {
     display: none;
@@ -91,5 +93,8 @@
 
     .expList > li::before {
         font-size: 5vw;
+    }
+    .expList > li::after {
+        transform: translateY(-25%) scale(0.5);
     }
 }

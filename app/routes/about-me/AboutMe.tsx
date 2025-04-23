@@ -12,8 +12,8 @@ export default function AboutMe() {
     return (
         <div className={styles.content}>
             <h1>About Me</h1>
-            <main>
-              <p>I enjoy coding to make ideas come to life.</p>
+            <main style={{ paddingBottom: '5rem'}}>
+              <p>I enjoy programming to make ideas come to life.</p>
             </main>
         </div>
     )
